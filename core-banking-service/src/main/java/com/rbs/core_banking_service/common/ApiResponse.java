@@ -1,0 +1,58 @@
+package com.rbs.core_banking_service.common;
+
+import java.time.LocalDateTime;
+
+/**
+ * Generic API response payload for successful and error responses.
+ *
+ * @param <T> the type of the response data
+ */
+public class ApiResponse<T> {
+
+    private LocalDateTime timestamp;
+    private int status;
+    private String message;
+    private T data;
+
+    public ApiResponse() {
+    }
+
+    public ApiResponse(LocalDateTime timestamp, int status, String message, T data) {
+        this.timestamp = timestamp;
+        this.status = status;
+        this.message = message;
+        this.data = data;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+}
